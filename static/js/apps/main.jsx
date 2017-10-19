@@ -1,6 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import productsApp from './reducers'
+import App from './components/App'
 
-const App = ({ message }) => <div>{ message }</div>;
+let store = createStore(productsApp)
 
-ReactDOM.render(<App message="hello world" />, document.getElementById('app'));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)

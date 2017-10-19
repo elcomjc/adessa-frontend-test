@@ -1,15 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-const Product = ({data, onButtonAction}) => {
+const Product = ({data, buttonMessage, onButtonAction}) => (
 
     <div className="product-container">
-        <div className="image">{data.imageUrl}</div>
+        <div className="image">
+            <img src={data.imageURL} alt=""/>
+        </div>
         <div className="name">{data.name}</div>
         <div className="price">{data.currency} {data.price}</div>
-        <Button text={'Add to cart'} onButtonClick={onButtonAction}></Button>
+        <Button text={buttonMessage} onButtonClick={onButtonAction}></Button>
     </div>
-}
+)
 
 Product.propTypes = {
     onButtonAction: PropTypes.func.isRequired,
@@ -20,7 +23,8 @@ Product.propTypes = {
         type: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         currency: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
+    buttonMessage: PropTypes.string.isRequired
 }
 
 export default Product;

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Button = ({onButtonClick, text}) => {
+const Button = ({onButtonClick, text}) => (
     <button
-        className="btn btn-falabella">
-        onClick={() => onButtonClick()}
+        className="btn-falabella"
+        onClick={() => onButtonClick()}>
+        {text}
     </button>
-}
+)
 
 Button.propTypes = {
     onButtonClick: PropTypes.func.isRequired,

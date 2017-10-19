@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
 
-const ProductList = ({products, onButtonActionClick}) => {
-    <div className="product-list">
-        {products.map(product => (
-            <Product id={product.id} data={product} onButtonAction={() => onButtonActionClick(product.id)} />
-        ))}
+const ProductList = ({products, onButtonActionClick}) => (
+    <div>
+        <div>
+            <h2>Product List</h2>
+        </div>
+        <div className="product-list">
+            {products.map(product => (
+                <Product key={product.id} data={product} buttonMessage="Add to cart" onButtonAction={() => onButtonActionClick(product)} />
+            ))}
+        </div>
     </div>
-}
+)
 
 ProductList.propTypes = {
     products: PropTypes.arrayOf(

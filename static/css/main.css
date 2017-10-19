@@ -1,1 +1,63 @@
 /* you can add any styles you think could improve user's experience */
+.product-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+
+.product-cart {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+
+.product-cart > .product-container {
+    flex: 0 1 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.product-list > .product-container {
+    flex: 0 1 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-list > .product-container > *, .product-cart > .product-container > * {
+    flex: 1 1 auto;
+    padding: 10px 0;
+}
+
+.product-list > .product-container > .btn-falabella, .product-cart > .product-container > .btn-falabella {
+    width: 100%;
+    color: white;
+    background-color: #8e44ad;
+    cursor: pointer;
+}
+
+.product-list > .product-container > .btn-falabella:hover, .product-cart > .product-container > .btn-falabella:hover {
+    background-color: #27ae60;
+}
+
+.total-amount {
+    background-color: #72B942;
+    text-align: left;
+    padding: 10px 5px;
+    width: 140px;
+    margin-left: -8px;
+    font-weight: bold;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

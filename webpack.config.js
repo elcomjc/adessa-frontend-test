@@ -13,6 +13,9 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   module: {
+    loaders: [
+      { test: /\.json$/, loader: "json-loader" }
+    ],
     rules: [
       {
         test: /\.jsx?$/,
